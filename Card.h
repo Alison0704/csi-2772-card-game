@@ -1,60 +1,139 @@
 //
-// Created by Alison Emilien on 2024-11-17.
+// Created by Alison Emilien on 2024-11-29.
 //
 
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-enum cardType {
-    Blue,Chili,Stink,Green,soy,black,Red,garden
-};
-
-
 class Card {
+
 public:
-    Card(cardType type) {
-        name = type;
-    }
-    virtual int getCardsPerCoin(int coins) {
-        int cardCoins[8][4]={4,6,8,10,
-                        3,6,8,9,
-                        3,5,7,8,
-                        3,5,6,7,
-                        2,4,6,7,
-                        2,4,5,6,
-                        2,3,4,5,
-                        0,2,3,0};
+    virtual ~Card() = default;
 
-        return cardCoins[name][coins-1];
-    }
-    virtual string getName() {
-        switch (name) {
-            case 0:
-                return "Blue";
-            case 1:
-                return "Chili";
-            case 2:
-                return "Stink";
-            case 3:
-                return "Green";
-            case 4:
-                return "soy";
-            case 5:
-                return "black";
-            case 6:
-                return "Red";
-            case 7:
-                return "garden";
-        }
+    virtual int getCardsPerCoin(int coins) const = 0;
+    virtual string getName() const = 0;
+    virtual void print(ostream& out) const = 0;
 
-
-    }
-    virtual void print(ostream& out) {
-        out << getName()[0];
-    }
-
-private:
-    cardType name = Chili;
+    friend ostream& operator<<(ostream& out, const Card& card);
 };
+
+inline ostream& operator<<(ostream& out, const Card& card) {
+    card.print(out);
+    return out;
+}
+
+class Blue : public Card {
+public:
+    int getCardsPerCoin(int coins) const override {
+        return cardCoins[0][coins-1];
+    }
+
+    string getName() const override {
+        return "Blue";
+    }
+
+    void print(ostream& out) const override {
+        out << "B";
+    }
+};
+class Chili : public Card {
+public:
+    int getCardsPerCoin(int coins) const override {
+        return cardCoins[1][coins-1];
+    }
+    string getName() const override {
+        return "Chili";
+    }
+    void print(ostream& out) const override {
+        out << "C";
+    }
+};
+class Stink : public Card {
+public:
+    int getCardsPerCoin(int coins) const override {
+        return cardCoins[2][coins-1];
+    }
+
+    string getName() const override {
+        return "Stink";
+    }
+
+    void print(ostream& out) const override {
+        out << "S";
+    }
+};
+class Green : public Card {
+public:
+    int getCardsPerCoin(int coins) const override {
+        return cardCoins[3][coins-1];
+    }
+
+    string getName() const override {
+        return "Green";
+    }
+
+    void print(ostream& out) const override {
+        out << "G";
+    }
+};
+class soy : public Card {
+public:
+    int getCardsPerCoin(int coins) const override {
+        return cardCoins[4][coins-1];
+    }
+
+    string getName() const override {
+        return "soy";
+    }
+
+    void print(ostream& out) const override {
+        out << "S";
+    }
+};
+class black : public Card {
+public:
+    int getCardsPerCoin(int coins) const override {
+        return cardCoins[5][coins-1];
+    }
+
+    string getName() const override {
+        return "Black";
+    }
+
+    void print(ostream& out) const override {
+        out << "b";
+    }
+};
+class Red : public Card {
+public:
+    int getCardsPerCoin(int coins) const override {
+        return cardCoins[6][coins-1];
+    }
+
+    string getName() const override {
+        return "Red";
+    }
+
+    void print(ostream& out) const override {
+        out << "R";
+    }
+};
+class Garden : public Card {
+public:
+    int getCardsPerCoin(int coins) const override {
+        return cardCoins[7][coins-1];
+    }
+
+    string getName() const override {
+        return "Garden";
+    }
+
+    void print(ostream& out) const override {
+        out << "G";
+    }
+};
+
+
