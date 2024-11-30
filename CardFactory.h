@@ -1,46 +1,54 @@
 #include <random>
-
 #include "Deck.h"
-#include "Card.h"
 
 using namespace std;
 
+class Deck;
 class CardFactory {
 public:
+    //----------Given functions
     static CardFactory* getFactory() {
         if (!instance) {
             instance = new CardFactory();
         }
         return instance;
     }
-    vector<unique_ptr<Card>> getDeck() {
-        vector<unique_ptr<Card>> deck = cards;
-        shuffle(deck.begin(), deck.end(), default_random_engine());
+
+    Deck getDeck() {
+        Deck deck(instance);
+        // Create a random engine
+        random_device rd;
+        default_random_engine eng(rd()); // Seed the engine
+        // Shuffle the deck
+        if(!cards.empty()) {
+            shuffle(cards.begin(), cards.end(), eng);
+        }
         return deck;
     }
+    //-----------added function
+    ~CardFactory();
+    static Card* createCard(const string& cardName);
 
-    //Avoiding duplicates
-    CardFactory(const CardFactory&) = delete;
-    CardFactory& operator=(const CardFactory&) = delete;
+    // Deleting the copy constructor to prevent copies
+    CardFactory(const CardFactory& obj) = delete;
+
 private:
-    vector<Card> cards;
+    vector<Card*> cards;
     static CardFactory* instance;
-    //Naming all the amount of bean cards in the deck
-    const int   numBlue = 20,
-                numChili = 18,
-                numStink = 16,
-                numGreen = 14,
-                numSoy = 12,
-                numBlack = 10,
-                numRed = 8,
-                numGarden = 6;
-
-    // Private constructor to create the cards
-    CardFactory() {
-        for(int i = 0; i < numBlue; i++) {
-            cards.emplace_back(new Card->Blue);
-    }
+    // Given function: Private constructor to create the cards to make sure no one uses it outside of this one instance
+    CardFactory();
+    static const int numBlue = 20;
+    static const int numChili = 18;
+    static const int numStink = 16;
+    static const int numGreen = 14;
+    static const int numsoy = 12;
+    static const int numblack = 10;
+    static const int numRed = 8;
+    static const int numgarden = 6;
+    static const int total = numBlue+numChili+numStink+numGreen+numsoy+numblack+numRed+numgarden;
 };
+CardFactory* CardFactory::instance = nullptr;
+
 
 
 

@@ -1,14 +1,26 @@
-#include "Card1.h"
 #include <vector>
 
-class CardFactory;
-class Card;
+#include "Card.h"
 
-class Deck  : public std::vector<Card*>{
+using namespace std;
+
+class Deck : public vector<Card*>{
 public:
+    //constructor
+    Deck(istream& in, const class CardFactory* factory);
+    Deck(CardFactory* factory);
+    Deck();
+
+    //given functions
+    Card* draw();
+    friend std::ostream& operator<<(std::ostream& os, const Deck& deck);
+
+    //added functions
+    bool isEmpty() const;
+    void print(std::ostream&) const;
 
 private:
-
+    vector cardDeck;
 };
 
 
