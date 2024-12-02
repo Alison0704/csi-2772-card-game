@@ -14,17 +14,8 @@ public:
         return instance;
     }
 
-    Deck getDeck() {
-        Deck deck(instance);
-        // Create a random engine
-        random_device rd;
-        default_random_engine eng(rd()); // Seed the engine
-        // Shuffle the deck
-        if(!cards.empty()) {
-            shuffle(cards.begin(), cards.end(), eng);
-        }
-        return deck;
-    }
+    Deck* getDeck();
+    
     //-----------added function
     ~CardFactory();
     static Card* createCard(const string& cardName);
