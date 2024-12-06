@@ -10,4 +10,10 @@ add_executable(Code
         Deck.h
         Deck.cpp
         main.cpp
-        CardFactory.h)
+        CardFactory.h
+        Chain.cpp
+        DiscardPile.cpp
+        TradeArea.cpp
+        Hand.cpp
+        Player.cpp
+        Table.cpp)

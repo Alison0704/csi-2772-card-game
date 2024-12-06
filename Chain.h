@@ -35,7 +35,7 @@ class Chain : public virtual Chain_b{
                 chainType =  chainType.substr(1,chainType.size()); // remove the first unexpected digit in the type name
             }
         };
-        Chain(std::istream& input, const CardFactory* cardfactory){
+        Chain(std::istream& input, const CardFactory*){
                 std::string line;
                 Card* card = nullptr;
                 int count = 0;

@@ -4,12 +4,15 @@
 #include "Card.h"
 #include <list>
 
+class CardFactory;
+
 class TradeArea {
     private : 
         std::list<Card*> tradeArea; 
     public : 
         // Constructeur 
         TradeArea(std::istream, CardFactory*);
+
         // renvoie true si la carte peut être légalement ajouté à l’échange,
         bool legal( Card* );
        

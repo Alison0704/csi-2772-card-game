@@ -1,10 +1,11 @@
+#pragma once
 #include <random>
 #include "Deck.h"
 
 using namespace std;
 
 class Deck;
-class CardFactory {
+class CardFactory{
 public:
     //----------Given functions
     static CardFactory* getFactory() {
@@ -14,8 +15,7 @@ public:
         return instance;
     }
 
-    Deck* getDeck();
-    
+    Deck getDeck();
     //-----------added function
     ~CardFactory();
     static Card* createCard(const string& cardName);

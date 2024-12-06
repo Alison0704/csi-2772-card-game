@@ -6,9 +6,12 @@
 
 #include <random>
 #include <ostream>
-#include <__random/random_device.h>
 
 using namespace std;
+
+Deck::Deck(istream& in, CardFactory*) {
+
+}
 
 Card* Deck::draw() {
     Card* topCard = nullptr;
@@ -34,3 +37,5 @@ void Deck::print(std::ostream& out) const {
         i->print(out);
     }
 }
+
+

@@ -70,6 +70,48 @@ build CMakeFiles/Code.dir/main.cpp.o: CXX_COMPILER__Code_unscanned_Debug /Users/
   OBJECT_DIR = CMakeFiles/Code.dir
   OBJECT_FILE_DIR = CMakeFiles/Code.dir
 
+build CMakeFiles/Code.dir/Chain.cpp.o: CXX_COMPILER__Code_unscanned_Debug /Users/alisonemilien/Document/University/Fall$ 2024/CSI$ 2772/Projet/Code/Chain.cpp || cmake_object_order_depends_target_Code
+  DEP_FILE = CMakeFiles/Code.dir/Chain.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics
+  INCLUDES = -I"/Users/alisonemilien/Document/University/Fall 2024/CSI 2772/Projet/Code/."
+  OBJECT_DIR = CMakeFiles/Code.dir
+  OBJECT_FILE_DIR = CMakeFiles/Code.dir
+
+build CMakeFiles/Code.dir/DiscardPile.cpp.o: CXX_COMPILER__Code_unscanned_Debug /Users/alisonemilien/Document/University/Fall$ 2024/CSI$ 2772/Projet/Code/DiscardPile.cpp || cmake_object_order_depends_target_Code
+  DEP_FILE = CMakeFiles/Code.dir/DiscardPile.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics
+  INCLUDES = -I"/Users/alisonemilien/Document/University/Fall 2024/CSI 2772/Projet/Code/."
+  OBJECT_DIR = CMakeFiles/Code.dir
+  OBJECT_FILE_DIR = CMakeFiles/Code.dir
+
+build CMakeFiles/Code.dir/TradeArea.cpp.o: CXX_COMPILER__Code_unscanned_Debug /Users/alisonemilien/Document/University/Fall$ 2024/CSI$ 2772/Projet/Code/TradeArea.cpp || cmake_object_order_depends_target_Code
+  DEP_FILE = CMakeFiles/Code.dir/TradeArea.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics
+  INCLUDES = -I"/Users/alisonemilien/Document/University/Fall 2024/CSI 2772/Projet/Code/."
+  OBJECT_DIR = CMakeFiles/Code.dir
+  OBJECT_FILE_DIR = CMakeFiles/Code.dir
+
+build CMakeFiles/Code.dir/Hand.cpp.o: CXX_COMPILER__Code_unscanned_Debug /Users/alisonemilien/Document/University/Fall$ 2024/CSI$ 2772/Projet/Code/Hand.cpp || cmake_object_order_depends_target_Code
+  DEP_FILE = CMakeFiles/Code.dir/Hand.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics
+  INCLUDES = -I"/Users/alisonemilien/Document/University/Fall 2024/CSI 2772/Projet/Code/."
+  OBJECT_DIR = CMakeFiles/Code.dir
+  OBJECT_FILE_DIR = CMakeFiles/Code.dir
+
+build CMakeFiles/Code.dir/Player.cpp.o: CXX_COMPILER__Code_unscanned_Debug /Users/alisonemilien/Document/University/Fall$ 2024/CSI$ 2772/Projet/Code/Player.cpp || cmake_object_order_depends_target_Code
+  DEP_FILE = CMakeFiles/Code.dir/Player.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics
+  INCLUDES = -I"/Users/alisonemilien/Document/University/Fall 2024/CSI 2772/Projet/Code/."
+  OBJECT_DIR = CMakeFiles/Code.dir
+  OBJECT_FILE_DIR = CMakeFiles/Code.dir
+
+build CMakeFiles/Code.dir/Table.cpp.o: CXX_COMPILER__Code_unscanned_Debug /Users/alisonemilien/Document/University/Fall$ 2024/CSI$ 2772/Projet/Code/Table.cpp || cmake_object_order_depends_target_Code
+  DEP_FILE = CMakeFiles/Code.dir/Table.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics
+  INCLUDES = -I"/Users/alisonemilien/Document/University/Fall 2024/CSI 2772/Projet/Code/."
+  OBJECT_DIR = CMakeFiles/Code.dir
+  OBJECT_FILE_DIR = CMakeFiles/Code.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Code
@@ -78,7 +120,7 @@ build CMakeFiles/Code.dir/main.cpp.o: CXX_COMPILER__Code_unscanned_Debug /Users/
 #############################################
 # Link the executable Code
 
-build Code: CXX_EXECUTABLE_LINKER__Code_Debug CMakeFiles/Code.dir/CardFactory.cpp.o CMakeFiles/Code.dir/Deck.cpp.o CMakeFiles/Code.dir/main.cpp.o
+build Code: CXX_EXECUTABLE_LINKER__Code_Debug CMakeFiles/Code.dir/CardFactory.cpp.o CMakeFiles/Code.dir/Deck.cpp.o CMakeFiles/Code.dir/main.cpp.o CMakeFiles/Code.dir/Chain.cpp.o CMakeFiles/Code.dir/DiscardPile.cpp.o CMakeFiles/Code.dir/TradeArea.cpp.o CMakeFiles/Code.dir/Hand.cpp.o CMakeFiles/Code.dir/Player.cpp.o CMakeFiles/Code.dir/Table.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4
   OBJECT_DIR = CMakeFiles/Code.dir
   POST_BUILD = :

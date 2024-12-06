@@ -1,5 +1,5 @@
 #include "CardFactory.h"
-
+#include "Deck.h"
 using namespace std;
 
 class Deck;
@@ -50,11 +50,10 @@ Card* CardFactory::createCard(const std::string& cardName) {
     return nullptr; // Invalid card name
 }
 
-
-Deck* CardFactory::getDeck(){
-    unsigned seed = 0;
-    std::shuffle(deck->begin(), deck->end(), std::default_random_engine(seed)); // shuffle 
-    return deck;
+Deck CardFactory::getDeck(){
+    constexpr unsigned seed = 0;
+    std::shuffle(cardDeck.begin(), cardDeck.end(), std::default_random_engine(seed)); // shuffle
+    return cardDeck;
 }
 
 
