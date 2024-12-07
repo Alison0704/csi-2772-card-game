@@ -8,13 +8,21 @@ class Deck;
 class CardFactory{
 public:
     //----------Given functions
+    //instance with file
+    static CardFactory* getFactory(istream&) {
+        if (!instance) {
+            instance = new CardFactory();
+        }
+        return instance;
+    }
+    //instance without file
     static CardFactory* getFactory() {
         if (!instance) {
             instance = new CardFactory();
         }
         return instance;
     }
-
+    
     Deck getDeck();
     //-----------added function
     ~CardFactory();
@@ -23,8 +31,13 @@ public:
     // Deleting the copy constructor to prevent copies
     CardFactory(const CardFactory& obj) = delete;
 
+    //save game
+    void save(ostream&) const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Card& card);
+
 private:
-    vector<Card*> cards;
+    Deck cardDeck;
     static CardFactory* instance;
     // Given function: Private constructor to create the cards to make sure no one uses it outside of this one instance
     CardFactory();

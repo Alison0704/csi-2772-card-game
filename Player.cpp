@@ -3,22 +3,24 @@
 #include "Player.h"
 
 // Get Player Name
-std::string Player::getName(){
+std::string Player::getName() const{
     return this->player_Name;
 }
 
 // Get Player's number of Coins
-int Player::getNumCoins(){
+int Player::getNumCoins() const{
     return player_Coins;
 }
 
 int Player::getNumChains(){
     return 0; // to be changed
 }
-int Player::getNumCards(){
+
+int Player::getNumCards() const{
     return player_Hand->numCards();
 }
-int Player::getMaxnumChains(){
+
+int Player::getMaxnumChains() const{
     return num_chains_max;
 }
 
@@ -52,7 +54,7 @@ void Player::buyThirdChain(){
     }
 }
 
-void Player::savePlayer(int p_id){
+void Player::savePlayer(int p_id) const {
     
     std::ofstream file;
     char id[2];
@@ -77,6 +79,13 @@ void Player::savePlayer(int p_id){
     file.close();
     std::cout << "Player-"+std::string(id) << " sauvegardé " << std::endl;
 }
+bool Player::cardMatch(Card * card) const {
+    for(auto& chain: player_Chain)
+        if (chain->match(card)) return true;
+    return false;
+}
+
+inline void Player::addCardToHand(Card* card) const {*player_Hand += card;}
 
 
 

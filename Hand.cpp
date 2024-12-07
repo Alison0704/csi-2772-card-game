@@ -60,7 +60,6 @@ void Hand::saveHand(std::ofstream& filename){
     while(!player_Hand.empty()){
         temp_card = player_Hand.front(); 
         temp_card -> saveCard(filename);
-        filename << std::endl;
         player_Hand.pop();     
         temp.push(temp_card); 
     }

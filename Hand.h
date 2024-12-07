@@ -12,7 +12,7 @@ class Hand{
     public :
         std::queue <Card*, std::list<Card*>> player_Hand; // Queue qui contient les cartes du player - représente la main
         // Constructeur sans arguments
-        Hand(){};
+        Hand();
         // Constructeur avec args 
         Hand(std::istream& entree, const CardFactory* card_fact){
             std::string line;

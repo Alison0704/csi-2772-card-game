@@ -12,7 +12,6 @@ void Chain_b::setChainType(std::string chainType){
 std::string Chain_b::getChainType(){
     return chainType;
 }
-
 void Chain_b::saveChain(std::ofstream& filename){
     filename << std::endl << chainType << std::endl;
     for(int i = 0; i < chain.size() ; i++){
@@ -21,19 +20,26 @@ void Chain_b::saveChain(std::ofstream& filename){
     }
     std::cout << "Chaine sauvegardée" << std::endl;
 }
-std::ostream& operator<<( std::ostream &output, const Chain<Card*> & d ){
-    output << d.chainType << " ";
-    for(int i = 0; i < d.chain.size(); i++){
-        d.chain.at(i)->print(output);
-        output << " ";
-    }
-    return output;
-};
+// std::ostream& operator<<( std::ostream &output, const Chain_b<Card*> d ){
+//     output << d.chainType << " ";
+//     for(int i = 0; i < d.chain.size(); i++){
+//         d.chain.at(i)->print(output);
+//         output << " ";
+//     }
+//     return output;
+// };
 std::ostream& operator<<( std::ostream &output, const Chain_b & d ){
     output << d.chainType  << " " << std::setw(4);
-    for(int i = 0; i < d.chain.size(); i++){
-        d.chain.at(i)->print(output);
+    for(auto i : d.chain){
+        i->print(output);
         output << " ";
     }
     return output;
 }
+bool Chain_b::match(Card * card) {
+    if (chainType==typeid(*card).name()) {
+        chain.push_back(card);
+        return true;
+    } else return false;
+}
+

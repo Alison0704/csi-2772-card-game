@@ -12,6 +12,8 @@ public:
     virtual int getCardsPerCoin(int coins) const = 0;
     virtual string getName() const = 0;
     virtual void print(ostream& out) const = 0;
+    friend std::ostream& operator<<(std::ostream&,  const Card&);
+    void saveCard(const ofstream & ofstream);
 };
 class Blue : public Card {
     int coinslist[4] = {4, 6, 8, 10};

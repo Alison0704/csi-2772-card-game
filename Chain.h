@@ -12,17 +12,20 @@ class CardFactory;
 
 class Chain_b{
     protected:
-        std::vector<Card*>  chain;
+        std::vector<Card*> chain;
         std::string chainType;
     public:
         int getSize();
         std::string getChainType();
+
         void setChainType(std::string chainType);
         void saveChain(std::ofstream& filename);
         Chain_b& operator+=(Card* card){
             chain.push_back(card);
             return *this;
-        };
+        }
+
+        bool match(Card * card);;
         virtual ~Chain_b() {};
         friend std::ostream& operator<<( std::ostream &output, const Chain_b & d );
 };
@@ -43,7 +46,7 @@ class Chain : public virtual Chain_b{
                 {
                     std::istringstream iss(line);
                     std::string data;
-                    if (!(iss >> data)) { 
+                    if (!(iss >> data)){
                         continue;
                     } 
                     count++;
@@ -73,7 +76,6 @@ class Chain : public virtual Chain_b{
             } 
             else throw std::runtime_error("IllegalType");
         };
-
         int sell(){
             T elem; 
             int value = 0;
@@ -93,7 +95,6 @@ class Chain : public virtual Chain_b{
             if(value == -1) value = 0; 
             return value;
         };
-
         friend std::ostream& operator<<( std::ostream &output, const Chain<Card*> & d );
 };       
 #endif

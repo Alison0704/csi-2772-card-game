@@ -9,8 +9,8 @@ using namespace std;
 class Deck : public vector<Card*>{
 public:
     //constructor
+    Deck();
     Deck(istream &in, CardFactory*);
-
 
     //given functions
     Card* draw();

@@ -13,6 +13,7 @@ class DiscardPile : public vector<Card*>{
         DiscardPile& operator+=(Card*);
         Card* pickUp();
         Card* top() const;
+        bool empty() const;
         void print(std::ostream&) const;
         friend ostream& operator<<(ostream& os, const DiscardPile& DiscardPile);
     private:

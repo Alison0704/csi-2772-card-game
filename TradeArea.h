@@ -11,11 +11,13 @@ class TradeArea {
         std::list<Card*> tradeArea; 
     public : 
         // Constructeur 
-        TradeArea(std::istream, CardFactory*);
+        TradeArea(istream &is, const CardFactory *factory);
 
         // renvoie true si la carte peut être légalement ajouté à l’échange,
-        bool legal( Card* );
-       
+        bool legal(const Card*) const;
+
+        void discardAll(DiscardPile *pile);
+
         // ajoute une carte à l’échange
         TradeArea& operator+=(Card* card){
             if(this->legal(card)){ tradeArea.push_back(card);}
@@ -27,9 +29,15 @@ class TradeArea {
         };
         
         //  supprime de l’échange une carte du correspondant nom
-        Card* trade(std::string);
+        static Card* trade(const std::string&);
+
+        void trade(Player *player);
+
+        void save(ostream &os);
+
+
         // renvoie le nombre courant de cartes en échange
-        int numCards();
+        int numCards() const;
 
         friend std::ostream& operator<<( std::ostream&, const TradeArea& );
 

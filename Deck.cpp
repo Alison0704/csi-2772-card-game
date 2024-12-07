@@ -9,9 +9,10 @@
 
 using namespace std;
 
-Deck::Deck(istream& in, CardFactory*) {
+Deck::Deck() {}
 
-}
+//Read from file
+Deck::Deck(istream& in, CardFactory*) {}
 
 Card* Deck::draw() {
     Card* topCard = nullptr;

@@ -33,3 +33,7 @@ void DiscardPile::print(ostream& out) const {
         discard_card->print(out);
     }
 }
+
+bool DiscardPile::empty() const {
+    return discard_cards.empty();
+}
