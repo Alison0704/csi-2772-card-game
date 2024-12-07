@@ -39,3 +39,4 @@ std::ostream& operator<<( std::ostream& output,  const Table&  tb){
     output << std::endl;
     return output;
 };
+//Table(istream&, const CardFactory*) was supposed to be implemented
