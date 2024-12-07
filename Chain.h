@@ -26,7 +26,7 @@ class Chain_b{
         }
 
         bool match(Card * card);;
-        virtual ~Chain_b() {};
+        virtual ~Chain_b() = default;
         friend std::ostream& operator<<( std::ostream &output, const Chain_b & d );
 };
 template <typename T = Card> 

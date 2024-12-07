@@ -14,7 +14,7 @@ class Hand{
         // Constructeur sans arguments
         Hand();
         // Constructeur avec args 
-        Hand(std::istream& entree, const CardFactory* card_fact){
+        Hand(std::istream& entree, const CardFactory*){
             std::string line;
             Card* card = nullptr;
             int card_cnt = 0; 
@@ -37,8 +37,8 @@ class Hand{
                     std::cout << "Carte reçue n'appartient à aucune catégorie de cartes, valeur de carte reçue : " << line_data << std::endl;
                     exit(1);
                 }
-                // carte non nulle - push dans la main
-                if(card != nullptr) player_Hand.push(card);
+                // // carte non nulle - push dans la main
+                // if(card != nullptr) player_Hand.push(card);
 
             }
 

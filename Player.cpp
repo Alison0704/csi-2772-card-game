@@ -58,8 +58,9 @@ void Player::savePlayer(int p_id) const {
     
     std::ofstream file;
     char id[2];
-    
-    sprintf(id, "%d", p_id);
+
+    std::snprintf(id, sizeof(id), "%d", p_id);
+
     std::string filename ="Player"+std::string(id)+".txt";
 
     file.open(filename, std::ios::trunc);

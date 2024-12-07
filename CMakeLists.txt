@@ -7,13 +7,22 @@ include_directories(.)
 
 add_executable(Code
         CardFactory.cpp
-        Deck.h
-        Deck.cpp
-        main.cpp
         CardFactory.h
         Chain.cpp
+        Chain.h
+        Deck.h
+        Deck.cpp
         DiscardPile.cpp
+        DiscardPile.h
+        main.cpp
+        Main.h
         TradeArea.cpp
+        TradeArea.h
         Hand.cpp
+        Hand.h
         Player.cpp
-        Table.cpp)
+        Player.h
+        Table.cpp
+        Table.h
+        Card.cpp
+        Card.h)

@@ -1,6 +1,8 @@
 #include "Hand.h"
 
-//  renvoie et supprime la première carte de la main du joueur 
+//  renvoie et supprime la première carte de la main du joueur
+Hand::Hand() = default;
+
 Card* Hand::play(){ 
     Card* card = player_Hand.front();
     player_Hand.pop(); 

@@ -50,12 +50,13 @@ class Player{
         };
         Chain_b& operator[](int i);
         void buyThirdChain();
-        friend std::ostream& operator<<(std::ostream& os,  const Player& player ) {
-            os << player.player_Name << " has " << player.player_Coins << " coins\n";
-            os << "Chain 1: " << player.player_Chain.at(0)->getChainType();
-            os << "Chain 2: " << player.player_Chain.at(1)->getChainType();
+        friend std::ostream& operator<<(std::ostream& os,  const Player& player) {
+            os << player.player_Name << " has " << player.player_Coins << " coins\n" ;
+            //was supposed to print the chains as well
+            //os << player.player_Chain << endl;
             return os;
         };
+
         void savePlayer(int p_id) const;
         // Print la main du player
         void printHand(std::ostream& sortie, bool boolean) const{
